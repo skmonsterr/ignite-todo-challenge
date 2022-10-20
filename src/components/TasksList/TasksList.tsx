@@ -1,4 +1,5 @@
 import { PlusCircle } from "phosphor-react";
+import { TaskListContent } from "../TaskListContent/TaskListContent";
 import styles from "./TasksList.module.css";
 
 export function TasksList() {
@@ -17,9 +18,7 @@ export function TasksList() {
           </button>
         </form>
       </header>
-      <div>
-        <p>Tarefa aqui!</p>
-      </div>
+      <TaskListContent />
     </div>
   );
 }
