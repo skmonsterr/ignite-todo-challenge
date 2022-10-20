@@ -1,3 +1,4 @@
+import { TaskListItem } from "../TaskListItem/TaskListItem";
 import styles from "./TaskListContent.module.css";
 
 export function TaskListContent() {
@@ -13,7 +14,13 @@ export function TaskListContent() {
           <span>2 de 5</span>
         </div>
       </header>
-      <main className={styles.taskListItensContainer}>Lista</main>
+      <main className={styles.taskListItensContainer}>
+        <TaskListItem />
+        <TaskListItem />
+        <TaskListItem />
+        <TaskListItem />
+        <TaskListItem />
+      </main>
     </div>
   );
 }
