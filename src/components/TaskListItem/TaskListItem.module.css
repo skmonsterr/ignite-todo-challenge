@@ -8,6 +8,13 @@
   border-radius: 8px;
   padding: 1rem;
 }
+.taskListItem p {
+  white-space: pre-wrap; /* CSS3 */
+  white-space: -moz-pre-wrap; /* Firefox */
+  white-space: -pre-wrap; /* Opera <7 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-word; /* IE */
+}
 
 .taskListItem:not(:first-child) {
   margin-top: 0.75rem;
@@ -57,8 +64,52 @@
   color: var(--gray-300);
   cursor: pointer;
   transition: color 0.2s;
+  padding: 0.3rem;
 }
 
 .taskListItemDeleteButton:hover {
   color: var(--red-500);
+  background: var(--gray-350);
+  border-radius: 4px;
+  padding: 0.3rem;
+}
+
+@media (max-width: 600px) {
+  .taskListItem {
+    display: grid;
+    grid-template-areas:
+      "toggle delete"
+      "text text";
+    grid-template-columns: fit-content fit-content;
+    grid-template-rows: fit-content fit-content;
+    place-items: center;
+  }
+  .taskListItemText,
+  .taskListItemTextSelected {
+    border-top: 1px solid var(--gray-350);
+    padding-top: 10px;
+
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .taskListItem {
+    display: grid;
+    grid-template-areas:
+      "toggle delete"
+      "text text";
+    grid-template-columns: fit-content fit-content;
+    grid-template-rows: fit-content fit-content;
+    place-items: center;
+  }
+  .taskListItemText,
+  .taskListItemTextSelected {
+    border-top: 1px solid var(--gray-350);
+    padding-top: 10px;
+
+    width: 100%;
+    text-align: center;
+  }
 }

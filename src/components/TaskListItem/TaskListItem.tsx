@@ -2,16 +2,35 @@ import { Check, Trash } from "phosphor-react";
 import styles from "./TaskListItem.module.css";
 
 export interface TaskListItemProps {
+  content: string;
+  taskId: string;
   isDone: boolean;
+  onDelete: (taskId: string) => void;
+  onSelect: (taskId: string) => void;
 }
 
-export function TaskListItem({ isDone }: TaskListItemProps) {
+export function TaskListItem({
+  content,
+  taskId,
+  isDone,
+  onDelete,
+  onSelect,
+}: TaskListItemProps) {
+  function handleDeleteTask() {
+    onDelete(taskId);
+  }
+
+  function handleSelectTask() {
+    onSelect(taskId);
+  }
+
   return (
     <div className={styles.taskListItem}>
       <button
         className={
-          isDone ? styles.taskListItemToggleSelected : styles.listItemToggle
+          isDone ? styles.taskListItemToggleSelected : styles.taskListItemToggle
         }
+        onClick={handleSelectTask}
       >
         {isDone ? <Check size={24} /> : null}
       </button>
@@ -20,12 +39,16 @@ export function TaskListItem({ isDone }: TaskListItemProps) {
           isDone ? styles.taskListItemTextSelected : styles.taskListItemText
         }
       >
-        Integer urna interdum massa libero auctor neque turpis turpis semper.
-        Duis vel sed fames integer.
+        {content}
       </p>
-      <button className={styles.taskListItemDeleteButton}>
-        <Trash size={24} />
-      </button>
+      <div className={styles.taskListItemDeleteButtonShadow}>
+        <button
+          className={styles.taskListItemDeleteButton}
+          onClick={handleDeleteTask}
+        >
+          <Trash size={20} />
+        </button>
+      </div>
     </div>
   );
 }

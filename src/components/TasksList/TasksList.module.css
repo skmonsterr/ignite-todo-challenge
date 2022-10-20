@@ -56,3 +56,13 @@
 .taskListHeader > form .taskListButtonNewTask:hover {
   background: var(--blue-400);
 }
+
+@media (max-width: 768px) {
+  .taskListHeader > form {
+    display: flex;
+    flex-direction: column;
+  }
+  .taskListHeader > form .taskListButtonNewTask {
+    width: 100%;
+  }
+}
