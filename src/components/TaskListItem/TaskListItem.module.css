@@ -34,6 +34,11 @@
   background: none;
 }
 
+.taskListItemToggle:hover {
+  background: var(--blue-700-opacity);
+  border: 2px solid var(--blue-400);
+}
+
 .taskListItemToggleSelected {
   display: flex;
   align-items: center;
@@ -41,6 +46,11 @@
   color: var(--gray-100);
   border: 3px solid var(--purple-700);
   background: var(--purple-700);
+}
+
+.taskListItemToggleSelected:hover {
+  background: var(--purple-400);
+  border: 3px solid var(--purple-400);
 }
 
 .taskListItemText,
