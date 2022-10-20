@@ -15,11 +15,11 @@ export function TaskListContent() {
         </div>
       </header>
       <main className={styles.taskListItensContainer}>
-        <TaskListItem />
-        <TaskListItem />
-        <TaskListItem />
-        <TaskListItem />
-        <TaskListItem />
+        <TaskListItem isDone={true} />
+        <TaskListItem isDone={true} />
+        <TaskListItem isDone={true} />
+        <TaskListItem isDone={true} />
+        <TaskListItem isDone={true} />
       </main>
     </div>
   );

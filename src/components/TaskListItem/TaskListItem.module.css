@@ -13,8 +13,8 @@
   margin-top: 0.75rem;
 }
 
-.listItemToggle,
-.listItemToggleSelected {
+.taskListItemToggle,
+.taskListItemToggleSelected {
   grid-area: toggle;
   width: 22px;
   height: 22px;
@@ -22,12 +22,12 @@
   border-radius: 999px;
 }
 
-.listItemToggle {
+.taskListItemToggle {
   border: 2px solid var(--blue-400);
   background: none;
 }
 
-.listItemToggleSelected {
+.taskListItemToggleSelected {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,20 +36,20 @@
   background: var(--purple-700);
 }
 
-.listItemText,
-.listItemTextSelected {
+.taskListItemText,
+.taskListItemTextSelected {
   grid-area: text;
   width: 90%;
   text-align: justify;
   color: var(--gray-100);
 }
 
-.listItemTextSelected {
+.taskListItemTextSelected {
   text-decoration-line: line-through;
   color: var(--gray-300);
 }
 
-.listItemDeleteButton {
+.taskListItemDeleteButton {
   grid-area: delete;
   display: flex;
   background-color: transparent;
@@ -59,6 +59,6 @@
   transition: color 0.2s;
 }
 
-.listItemDeleteButton:hover {
+.taskListItemDeleteButton:hover {
   color: var(--red-500);
 }
